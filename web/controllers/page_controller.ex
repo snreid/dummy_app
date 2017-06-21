@@ -4,6 +4,7 @@ defmodule Phoenixnew.PageController do
   def index(conn, params) do
     IO.puts("Welcome to Members-API!")
     content = File.read!(params["file_path"])
+    IO.puts(content)
     render conn, "index.html", content: content, key: params["key"]
   end
 end
