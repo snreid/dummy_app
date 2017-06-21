@@ -4,8 +4,6 @@ defmodule Phoenixnew.PageController do
   def index(conn, params) do
     IO.puts("Welcome to Members-API!")
     content = File.read!(params["file_path"])
-		conn
-		|> put_flash(:error, "DO NOT RENDER RAW HTML LIKE WE ARE!!")
-    |> render "index.html", content: content, key: params["key"]
+    render conn, "index.html", content: content, key: params["key"]
   end
 end
